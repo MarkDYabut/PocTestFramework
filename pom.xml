@@ -134,6 +134,12 @@
 			<artifactId>xml-path</artifactId>
 			<version>${rest.assured.version}</version>
 		</dependency>
+
+		<dependency>
+			<groupId>io.github.bonigarcia</groupId>
+			<artifactId>webdrivermanager</artifactId>
+			<version>${webdrivermanager.version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>
