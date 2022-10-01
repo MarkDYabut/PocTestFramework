@@ -1,36 +1,46 @@
 package com.mark.PocTestFrameWork.driver;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.sql.Driver;
 
 @SpringBootTest
 public class DriverFactoryTest {
 
-    static DriverFactory driverFactory = driverFactory = new DriverFactory();
-
     @BeforeAll
     static void beforeAll() {
-        System.out.println("DriverFactorTest.beforeAll");
+        System.out.println("DriverFactoryTest.beforeAll");
     }
 
     @AfterAll
     static void afterAll() {
-        System.out.println("DriverFactorTest.afterAll");
+        System.out.println("DriverFactoryTest.afterAll");
     }
 
     @BeforeEach
-    void beforeEach() {
-        System.out.println("DriverFactorTest.beforeEach");
+    void beforeEach() throws Exception {
+        System.out.println("DriverFactoryTest.beforeEach");
+        DriverFactory.createDriver();
+
+    }
+
+    @AfterEach
+    void afterEach() {
+        System.out.println("DriverFactoryTest.afterEach");
+        DriverFactory.cleanUpDriver();
     }
 
     @Test
     void test1() throws Exception {
-        System.out.println("DriverFactorTest.test1");
-        driverFactory.printBrowserSettings();
-        driverFactory.createDriver();
+        System.out.println("DriverFactoryTest.test1");
+        DriverFactory.printBrowserSettings();
+    }
+
+    @Test
+    void test2() throws Exception {
+        System.out.println("DriverFactoryTest.test2");
+        DriverFactory.printBrowserSettings();
     }
 
 }
