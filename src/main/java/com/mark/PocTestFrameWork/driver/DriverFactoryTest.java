@@ -43,4 +43,16 @@ public class DriverFactoryTest {
         DriverFactory.printBrowserSettings();
     }
 
+    @Test
+    void test3() throws Exception {
+        System.out.println("DriverFactoryTest.test3");
+        DriverFactory.printBrowserSettings();
+    }
+
+    @Test
+    void test4() throws Exception {
+        System.out.println("DriverFactoryTest.test4");
+        DriverFactory.printBrowserSettings();
+    }
+
 }
