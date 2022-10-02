@@ -35,24 +35,31 @@ public class DriverFactoryTest {
     void test1() throws Exception {
         System.out.println("DriverFactoryTest.test1");
         DriverFactory.printBrowserSettings();
+        DriverFactory.getDriver();
     }
 
     @Test
     void test2() throws Exception {
         System.out.println("DriverFactoryTest.test2");
         DriverFactory.printBrowserSettings();
+        DriverFactory.cleanUpDriver();
+        DriverFactory.getDriver();
     }
 
     @Test
     void test3() throws Exception {
         System.out.println("DriverFactoryTest.test3");
         DriverFactory.printBrowserSettings();
+        DriverFactory.quitDriver();
+        DriverFactory.getDriver();
     }
 
     @Test
     void test4() throws Exception {
         System.out.println("DriverFactoryTest.test4");
         DriverFactory.printBrowserSettings();
+        DriverFactory.removeDriver();
+        DriverFactory.getDriver();
     }
 
 }
