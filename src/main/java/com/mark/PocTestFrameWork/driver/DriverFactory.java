@@ -8,10 +8,13 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.Browser;
+import org.openqa.selenium.remote.LocalFileDetector;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 import java.util.Random;
 
@@ -24,6 +27,8 @@ public class DriverFactory {
     private static List<String> BROWSER_LIST;
     private static boolean randomizeBrowser;
     private static String defaultBrowser;
+    private static boolean enableGrid;
+    private static String gridUrl;
 
     public static void createDriver() throws Exception {
         String browserType = defaultBrowser;
@@ -76,7 +81,7 @@ public class DriverFactory {
     }
 
     private static WebDriver createChromeDriver() throws MalformedURLException {
-        return createLocalChromeDriver();
+        return enableGrid ? createRemoteChromeDriver() : createLocalChromeDriver();
     }
 
     private static WebDriver createLocalChromeDriver() {
@@ -90,8 +95,31 @@ public class DriverFactory {
         return webDriver;
     }
 
+    private static WebDriver createRemoteChromeDriver() throws MalformedURLException {
+        String remoteUrl = gridUrl;
+
+        ChromeOptions chromeOptions = new ChromeOptions();
+
+        RemoteWebDriver webDriver = new RemoteWebDriver(new URL(remoteUrl), chromeOptions);
+        setBasicWebDriverProperties(webDriver);
+        webDriver.setFileDetector(new LocalFileDetector());
+
+        return webDriver;
+    }
+
     private static WebDriver createFirefoxDriver() throws MalformedURLException {
-        return createLocalFirefoxDriver();
+        return enableGrid ? createRemoteFirefoxDriver() : createLocalFirefoxDriver();
+    }
+
+    private static WebDriver createRemoteFirefoxDriver() throws MalformedURLException {
+        String remoteUrl = gridUrl;
+        FirefoxOptions fireFoxOptions = new FirefoxOptions();
+
+        RemoteWebDriver webDriver = new RemoteWebDriver(new URL(remoteUrl), fireFoxOptions);
+        setBasicWebDriverProperties(webDriver);
+        webDriver.setFileDetector(new LocalFileDetector());
+
+        return webDriver;
     }
 
     private static WebDriver createLocalFirefoxDriver() {
@@ -103,6 +131,16 @@ public class DriverFactory {
         setBasicWebDriverProperties(webDriver);
 
         return webDriver;
+    }
+
+    @Value("${test.grid.enable}")
+    public void setEnableGrid(boolean enableGrid) {
+        DriverFactory.enableGrid = enableGrid;
+    }
+
+    @Value("${test.grid.hub.url}")
+    public void setGridUrl(String gridUrl) {
+        DriverFactory.gridUrl = gridUrl;
     }
 
     @Value("#{'${test.browser.list}'.split(',')}")
