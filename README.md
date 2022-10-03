@@ -19,6 +19,14 @@
 - Run multiple tags: `mvn test -Dcucumber.filter.tags="(@tag1 and @tag2) or @tag3"`
 ### Serve allure 
 - for latest reports: `mvn allure:serve`
+- do clean reports, just mvn clean: `mvn clean`
 ### Serve docker
 - for x64 `docker compose -f docker-compose.yml up`
 - for arm `docker compose -f docker-compose-arm.yml up`
+### Serve spring boot application
+- todo
+## Localhost:
+- for selenium grid: `http://localhost:4444/`
+- for allure it automatically opens reports
+- for h2 console: todo
+- for spring boot application: todo
