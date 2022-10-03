@@ -17,5 +17,8 @@
 - Run multiple tags: `mvn test -Dcucumber.filter.tags="@tag1 or @tag2"`
 - Run multiple tags: `mvn test -Dcucumber.filter.tags="@tag1 and @tag2"`
 - Run multiple tags: `mvn test -Dcucumber.filter.tags="(@tag1 and @tag2) or @tag3"`
-### Serve latest allure reports
-- mvn allure:serve
+### Serve allure 
+- for latest reports: `mvn allure:serve`
+### Serve docker
+- for x64 `docker compose -f docker-compose.yml up`
+- for arm `docker compose -f docker-compose-arm.yml up`
