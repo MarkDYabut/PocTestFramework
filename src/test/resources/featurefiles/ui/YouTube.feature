@@ -23,18 +23,18 @@ Feature: YouTube Test
 #    When I go to page "https://www.youtube.com"
     Then I verify YouTube channel name "Tech with Beskat"
 
-#  Scenario: Verify YouTube channel name 3
-#    When I go to page "https://www.youtube.com/c/techwithbeskat"
+  Scenario: Verify YouTube channel name 3
+    When I go to page "https://www.youtube.com/c/techwithbeskat"
+    Then I verify YouTube channel name "Tech with Beskat"
+
+  Scenario: Verify YouTube channel name which will fail 3
+    When I go to page "https://www.youtube.com"
 #    Then I verify YouTube channel name "Tech with Beskat"
-#
-#  Scenario: Verify YouTube channel name which will fail 3
-#    When I go to page "https://www.youtube.com"
-#    Then I verify YouTube channel name "Tech with Beskat"
-#
-#  Scenario: Verify YouTube channel name 4
-#    When I go to page "https://www.youtube.com/c/techwithbeskat"
-#    Then I verify YouTube channel name "Tech with Beskat"
-#
-#  Scenario: Verify YouTube channel name which will fail 4
-#    When I go to page "https://www.youtube.com"
+
+  Scenario: Verify YouTube channel name 4
+    When I go to page "https://www.youtube.com/c/techwithbeskat"
+    Then I verify YouTube channel name "Tech with Beskat"
+
+  Scenario: Verify YouTube channel name which will fail 4
+    When I go to page "https://www.youtube.com"
 #    Then I verify YouTube channel name "Tech with Beskat"
