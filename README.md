@@ -24,9 +24,18 @@
 - for x64 `docker compose -f docker-compose.yml up`
 - for arm `docker compose -f docker-compose-arm.yml up`
 ### Serve spring boot application
-- todo
-## Localhost:
+- run main class `src/main/java/com/mark/PocTestFrameWork/PocTestFrameworkApplication.java`
+## Localhost
 - for selenium grid: `http://localhost:4444/`
 - for allure it automatically opens reports
-- for h2 console: todo
-- for spring boot application: todo
+- for h2 console: `http://localhost:8080/h2-console`
+- for spring boot application: `http://localhost:8080`
+## Configuration Files
+- `src/main/resources/application.properties`
+- `src/test/resources/junit-platform.properties`
+- `src/test/resources/allure.properties`
+- `docker-compose.yml`
+- `docker-compose-arm.yml`
+## Test Engineering Files
+- `src/test/resources/featurefiles`
+- `src/test/java/com/mark/PocTestFrameWork/steps`
