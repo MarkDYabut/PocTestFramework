@@ -177,6 +177,16 @@
 <!--					<useUnlimitedThreads>true</useUnlimitedThreads>-->
 <!--					<threadCount>2</threadCount>-->
 <!--					<perCoreThreadCount>false</perCoreThreadCount>-->
+					<properties>
+						<configurationParameters>
+							junit.jupiter.execution.parallel.enabled = true
+<!--							junit.jupiter.execution.parallel.mode.default = concurrent-->
+<!--							junit.jupiter.execution.parallel.mode.classes.default = concurrent-->
+							junit.jupiter.execution.parallel.config.strategy = fixed
+<!--							junit.jupiter.execution.parallel.config.strategy = custom-->
+							junit.jupiter.execution.parallel.config.custom.class = com.mark.PocTestFrameWork.config.JunitCustomStrategy
+						</configurationParameters>
+					</properties>
 				</configuration>
 			</plugin>
 
