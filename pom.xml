@@ -168,6 +168,15 @@
 				<version>${maven-surefire.version}</version>
 				<configuration>
 					<rerunFailingTestsCount>0</rerunFailingTestsCount>
+<!--					<parallel>classes</parallel>-->
+<!--					<forkMode>perthread</forkMode>-->
+<!--					<threadCount>2</threadCount>-->
+<!--					<forkCount>0</forkCount>-->
+<!--					<parallelMavenExecution>false</parallelMavenExecution>-->
+<!--					<parallel>methods</parallel>-->
+<!--					<useUnlimitedThreads>true</useUnlimitedThreads>-->
+<!--					<threadCount>2</threadCount>-->
+<!--					<perCoreThreadCount>false</perCoreThreadCount>-->
 				</configuration>
 			</plugin>
 
