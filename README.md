@@ -17,6 +17,8 @@
 - Run multiple tags: `mvn test -Dcucumber.filter.tags="@tag1 or @tag2"`
 - Run multiple tags: `mvn test -Dcucumber.filter.tags="@tag1 and @tag2"`
 - Run multiple tags: `mvn test -Dcucumber.filter.tags="(@tag1 and @tag2) or @tag3"`
+- Run with override grid `mvn test -Dtest.grid.enable=false`
+- Run with override parallelism `mvn test -Dcucumber.execution.parallel.enabled=false`
 ### Serve allure 
 - for latest reports: `mvn allure:serve`
 - do clean reports, just mvn clean: `mvn clean`
@@ -39,3 +41,5 @@
 ## Test Engineering Files
 - `src/test/resources/featurefiles`
 - `src/test/java/com/mark/PocTestFrameWork/steps`
+## Resource Links
+- [Cucumber Junit](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-junit-platform-engine)

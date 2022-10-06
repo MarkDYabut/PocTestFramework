@@ -59,11 +59,11 @@ Feature: YouTube Test
     When I go to page "https://www.youtube.com/c/techwithbeskat"
     Then I verify YouTube channel name "Tech with Beskat"
 
-    @oneUi
+  @oneUi
   Scenario Outline: Verify YouTube channel name which will fail 7: "<execution>"
-    When I go to page "https://www.youtube.com"
+    When I go to page "<url>"
     Then I verify YouTube channel name "<name>"
-  Examples:
-    |execution    | name       |
-    |execution 1  | Tech with Beskat  |
-    |execution 2  | Yolo Tech         |
+    Examples:
+      | execution   | name             | url                                      |
+      | execution 1 | Tech with Beskat | https://www.youtube.com/c/techwithbeskat |
+#    |execution 2  | Yolo Tech         | https://www.youtube.com/c/techwithbeskat |
