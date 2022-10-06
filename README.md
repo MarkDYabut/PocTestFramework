@@ -13,11 +13,11 @@
 ## Commands
 ### Executing through mvn
 - Run all tests: `mvn test`
-- Run specific tag: `mvn test -Dcucumber.filter.tags=@tag`
+- Run specific tag: `mvn test -Dcucumber.filter.tags=@mvp1`
 - Run multiple tags: `mvn test -Dcucumber.filter.tags="@tag1 or @tag2"`
 - Run multiple tags: `mvn test -Dcucumber.filter.tags="@tag1 and @tag2"`
 - Run multiple tags: `mvn test -Dcucumber.filter.tags="(@tag1 and @tag2) or @tag3"`
-- Run with override grid `mvn test -Dtest.grid.enable=false`
+- Run with override grid `mvn test -Dtest.grid.enable=false -Dcucumber.filter.tags=@mvp1`
 - Run with override parallelism `mvn test -Dcucumber.execution.parallel.enabled=false`
 ### Serve allure 
 - for latest reports: `mvn allure:serve`

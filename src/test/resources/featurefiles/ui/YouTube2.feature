@@ -18,4 +18,4 @@ Feature: Other YouTube Test
       | execution 9  | Fireship                  | https://www.youtube.com/c/Fireship                       |
       | execution 10 | Fredrik Christenson       | https://www.youtube.com/c/FredrikChristenson             |
       | execution 11 | Coding Garden             | https://www.youtube.com/c/CodingGarden                   |
-      | execution 11 | Software Testing Material | https://www.youtube.com/c/SoftwareTestingMaterialWebsite |
+      | execution 12 | Software Testing Material | https://www.youtube.com/c/SoftwareTestingMaterialWebsite |
