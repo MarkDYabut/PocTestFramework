@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Driver Manager</title>
+</head>
+
+<body style="text-align: center; margin-top: 25px;">
+<div th:insert="fragments/navbar :: navbar"></div>
+<div>
+    <h1>Driver Manager</h1>
+    <h3>Welcome to the Driver Manager</h3>
+    <a href="/driver/destroyAll">destroy all drivers</a><br>
+    <a href="/driver/cleanAll">clean all drivers</a><br>
+    <a href="/driver/new">new driver</a><br>
+    <table style="width: 95%; text-align: center; margin: 20px; border: 1px solid black;">
+        <tr>
+            <th>Driver</th>
+            <th>Ping</th>
+            <th>Destroy</th>
+            <th>Action</th>
+        </tr>
+        <tr th:each="driver:${getDrivers}">
+            <td th:text="${driver.key}"/>
+            <td><a th:href="@{/driver/ping?id=} + ${driver.key}">Ping</a></td>
+            <td><a th:href="@{/driver/destroy?id=} + ${driver.key}">Destroy</a></td>
+            <td><a th:href="@{/driverAction/doAction?id=} + ${driver.key}">Action</a></td>
+        </tr>
+    </table>
+</div>
+<script>
+        function clicked(e) {
+            if (!confirm('Are you sure?')) {
+                e.preventDefault();
+            }
+        }
+        function changeLocation(key) {
+            textboxpw = document.getElementById(key);
+            console.log(textboxpw.value);
+            window.open('http://www.instagram.com/' + textboxpw.value.trim() + '/?hl=en', '_blank');
+        }
+</script>
+</body>
+</html>

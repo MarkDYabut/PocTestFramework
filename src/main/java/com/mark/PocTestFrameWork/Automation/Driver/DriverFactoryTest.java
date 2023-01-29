@@ -1,9 +1,8 @@
-package com.mark.PocTestFrameWork.driver;
+package com.mark.PocTestFrameWork.Automation.Driver;
 
 import org.junit.jupiter.api.*;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.sql.Driver;
 
 @SpringBootTest
 public class DriverFactoryTest {

@@ -32,5 +32,13 @@ build/
 ### VS Code ###
 .vscode/
 
+### Other Files ###
+*.gz
+*.png
+*.csv
+*.exe
+*.log
+*.db
+
 ### Allure ###
 .allure/

@@ -1,6 +1,6 @@
 package com.mark.PocTestFrameWork.steps;
 
-import com.mark.PocTestFrameWork.driver.DriverFactory;
+import com.mark.PocTestFrameWork.Automation.Driver.DriverFactory;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;

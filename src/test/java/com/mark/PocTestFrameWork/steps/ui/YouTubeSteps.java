@@ -1,6 +1,6 @@
 package com.mark.PocTestFrameWork.steps.ui;
 
-import com.mark.PocTestFrameWork.ui.BaseAutomationPage;
+import com.mark.PocTestFrameWork.Automation.ui.BaseAutomationPage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;

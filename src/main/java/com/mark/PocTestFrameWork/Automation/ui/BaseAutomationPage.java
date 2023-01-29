@@ -1,6 +1,6 @@
-package com.mark.PocTestFrameWork.ui;
+package com.mark.PocTestFrameWork.Automation.ui;
 
-import com.mark.PocTestFrameWork.driver.DriverFactory;
+import com.mark.PocTestFrameWork.Automation.Driver.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
