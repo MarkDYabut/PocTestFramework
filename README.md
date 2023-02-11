@@ -12,6 +12,7 @@
 - Docker
 ## Commands
 ### Executing through mvn
+- Run spring boot application: `mvn clean compile spring-boot:run`
 - Run all tests: `mvn test`
 - Run specific tag: `mvn test -Dcucumber.filter.tags=@mvp1`
 - Run multiple tags: `mvn test -Dcucumber.filter.tags="@tag1 or @tag2"`
