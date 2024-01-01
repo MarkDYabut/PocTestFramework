@@ -43,7 +43,7 @@ public class DriverService {
         switch (driverName) {
             case "chrome":
 //                System.setProperty("webdriver.chrome.driver", driverPath);
-                WebDriverManager.chromedriver().setup();
+//                WebDriverManager.chromedriver().setup();
                 ChromeOptions chromeOptions = new ChromeOptions();
                 driver = new ChromeDriver(chromeOptions);
 
