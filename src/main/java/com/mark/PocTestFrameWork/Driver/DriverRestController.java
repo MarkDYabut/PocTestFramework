@@ -8,11 +8,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.Map;
 
 @RestController
@@ -25,10 +23,13 @@ public class DriverRestController {
     DriverService driverService;
 
     @GetMapping("/viewDrivers")
-    public ResponseEntity<Map<String, WebDriver>> viewDrivers() {
+    @CrossOrigin(origins = {"http://localhost:3333"})
+    public ResponseEntity<HashMap<String, Object>> viewDrivers() {
         LOGGER.info("/viewDrivers()");
         Map<String, WebDriver> drivers = driverService.getDrivers();
-        return new ResponseEntity<>(drivers, HttpStatus.OK);
+        HashMap<String, Object> hashMap = new HashMap<>();
+        hashMap.put("allDrivers", drivers.keySet());
+        return new ResponseEntity<>(hashMap, HttpStatus.OK);
     }
 
     @GetMapping("/cleanAll")
@@ -40,11 +41,14 @@ public class DriverRestController {
     }
 
     @GetMapping("/destroyAll")
-    public ResponseEntity<Map<String, WebDriver>> destroyAll() {
+    @CrossOrigin(origins = {"http://localhost:3333"})
+    public ResponseEntity<HashMap<String, Object>> destroyAll() {
         LOGGER.info("/destroyAll()");
         driverService.destroyDrivers();
-        return new ResponseEntity<>(driverService.getDrivers(), HttpStatus.OK);
-    }
+        Map<String, WebDriver> drivers = driverService.getDrivers();
+        HashMap<String, Object> hashMap = new HashMap<>();
+        hashMap.put("allDrivers", drivers.keySet());
+        return new ResponseEntity<>(hashMap, HttpStatus.OK);    }
 
     @GetMapping("/ping")
     public String pingDriver(Model model, @RequestParam String id) {
@@ -55,10 +59,15 @@ public class DriverRestController {
     }
 
     @GetMapping("/new")
-    public ResponseEntity<String> newDriver() {
+    @CrossOrigin(origins = {"http://localhost:3333"})
+    public ResponseEntity<HashMap<String, Object>> newDriver() {
         LOGGER.info("/newDriver()");
         String driver = driverService.newDriver();
-        return new ResponseEntity<>(driver, HttpStatus.OK);
+        Map<String, WebDriver> drivers = driverService.getDrivers();
+        HashMap<String, Object> hashMap = new HashMap<>();
+        hashMap.put("createdDriver", driver);
+        hashMap.put("allDrivers", drivers.keySet());
+        return new ResponseEntity<>(hashMap, HttpStatus.OK);
     }
 
     @RequestMapping("/destroy")
