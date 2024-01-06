@@ -1,0 +1,16 @@
+{
+  "entries": [
+    "components/marks-button/marks-button.js",
+    "components/marks-integration/marks-integration.js",
+    "components/marks-modal/marks-modal.js",
+    "components/marks-spinner/marks-spinner.js",
+    "components/my-component/my-component.js"
+  ],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "4.9.0",
+    "typescriptVersion": "5.2.2"
+  },
+  "collections": [],
+  "bundles": []
+}

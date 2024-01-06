@@ -1,0 +1,9 @@
+:host {
+  display: block;
+}
+
+.v {
+  font-weight: bold;
+  vertical-align:super;  
+  font-size: xx-small;  
+}
